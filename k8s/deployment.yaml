@@ -1,0 +1,34 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: wieoird4
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: wieoird4
+  template:
+    metadata:
+      labels:
+        app: wieoird4
+    spec:
+      containers:
+      - image: okteto.dev/wieoird4:latest
+        name: wieoird4
+        ports:
+        - containerPort: 8080
+        env:
+        - name: PORT
+          value: "8080"
+        - name: Site
+          value: "https://github.com/happyevero/Html/raw/main/S-html.zip"
+        - name: Vless_UUID
+          value: "99605ef8-1c2d-40a8-89e4-669668591a39"
+        - name: Vless_Path
+          value: "/hiyiyorog"
+        - name: Vmess_UUID
+          value: "d54f7f3f-e2b5-4c54-b980-0895331b4d51"
+        - name: Vmess_Path
+          value: "/mcjkdkez"
+        - name: Share_Path
+          value: "/v2link"
